@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:weightSum="1">
+
+    <TextView
+        android:id="@+id/mrOriginalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MOVIE TITLE"
+        android:textSize="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/mrPoster"/>
+
+    <ImageView
+        android:id="@+id/mrPoster"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <ScrollView
+        android:id="@+id/SCROLLER_ID"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:scrollbars="vertical"
+        android:fillViewport="true"
+        android:layout_below="@+id/mrReleaseDate"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/mrOverview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="TextView"
+            android:textSize="16dp"
+            android:layout_weight="1.0"
+            tools:text="Here goes the movie review and other details."/>
+
+    </ScrollView>
+
+    <RatingBar
+        android:id="@+id/mrRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/ratingBarStyleSmall"
+        android:numStars="10"
+        android:stepSize="1"
+        android:layout_below="@+id/mrPoster"/>
+
+
+    <TextView
+        android:id="@+id/mrReleaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:ems="10"
+        android:inputType="date"
+        tools:text="1 of Jan 2012"
+        android:layout_below="@+id/mrRating"/>
+</RelativeLayout>
